@@ -715,3 +715,68 @@ h1 {
     }
     .hero-text-block h1 { font-size: 2.5rem; }
 }
+
+.alternance-banner {
+    margin-top : 20px;
+    background: rgba(255, 51, 51, 0.1); /* Rouge très transparent */
+    border: 2px solid var(--couleur-accent-rouge);
+    border-radius: 20px;
+    padding: 20px 30px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Effet de flou moderne */
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.banner-content i {
+    color: var(--couleur-accent-rouge);
+    font-size: 1.5rem;
+    animation: bounce 2s infinite; /* Petite animation pour attirer l'œil */
+}
+
+.btn-banner {
+    background: var(--couleur-accent-rouge);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-banner:hover {
+    transform: translateY(-5px); /* On garde le petit mouvement car c'est pro */
+    
+    /* On remplace la grosse lueur par un contour plus net ou une ombre très légère */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+    
+    /* Optionnel : on peut aussi légèrement éclaircir la bordure sans faire de halo */
+    border-color: #ff5555;
+    
+}
+
+/* Animation de la petite fusée */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Responsive Mobile */
+@media (max-width: 600px) {
+    .alternance-banner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
