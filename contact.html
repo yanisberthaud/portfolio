@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yanis BERTHAUD - Contact</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;700&display=swap" rel="stylesheet">
+    </head>
+    <body id="contact-page">
+        <header>
+            <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="projets.html" id="link-projets">Projets</a></li>
+                <li><a href="index.html"><img class="logo" src="images/logo.png"></a></li>
+                <li><a href="contact.html" id="link-contact">Contact</a></li>
+                <li><a href="profil.html" id="link-profil">Profil</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <main class="contact-main" style="padding-top: 200px !important">
+            <section class="contact-section">
+                <h1>Contactez-moi</h1>
+                <p>Intéressé par une collaboration ? Remplissez le formulaire ci-dessous et je vous recontacterai rapidement.</p>
+
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nom">Nom Complet</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sujet">Sujet</label>
+                        <input type="text" id="sujet" name="sujet" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Envoyer le Message</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Mon Portfolio</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

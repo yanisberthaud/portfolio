@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanis BERTHAUD - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="projets.html" id="link-projets">Projets</a></li>
+                <li><a href="index.html"><img class="logo" src="images/logo.png"></a></li>
+                <li><a href="contact.html" id="link-contact">Contact</a></li>
+                <li><a href="profil.html" id="link-profil">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="accueil-main">
+        <section class="hero-section">
+            <div class="portrait-container">
+                <div class="photo-placeholder">
+                    <img src="images/photo_de_profil.jpg" alt="Portrait de Yanis BERTHAUD">
+                </div>
+            </div>
+            <div class="bio-container">
+                <h1>Yanis BERTHAUD</h1>
+                <p class="para">
+                    Étudiant en 2ème année de Développement Web à l'école My Digital School de Lille, j'aspire à faire de se domaine 
+                    ma profession. <br>
+                    Depuis plusieurs années j'ai eu la possibilités de réaliser plusieurs projets que je vous propose de retrouver ici-même. 
+                    Que ce soit en design, développement, ou marketing, le domaine de l'informatique et son évolution me passionne à travers ses différents thèmes.
+                </p>
+                <div class="cta-links">
+                    <a href="projets.html" class="cta-button" data-hover-text="Me Découvrir">Mes Projets</a>
+                    <a href="contact.html" class="cta-button" data-hover-text="Écrivez-moi">Me Contacter</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="js-hidden">Mes Compétences Techniques</h2>
+            
+            <div class="skills-grid-logos">
+                
+                <div class="skill-logo-item">
+                    <i class="fa-brands fa-html5"></i>
+                    <p>HTML5 / CSS3</p>
+                </div>
+
+                <div class="skill-logo-item">
+                    <i class="fa-brands fa-php"></i>
+                    <p>PHP</p>
+                </div>
+
+                <div class="skill-logo-item" data-notion="true">
+                    <i class="fa-brands fa-js"></i>
+                    <p>JavaScript (Notions)</p>
+                </div>
+
+                <div class="skill-logo-item">
+                    <i class="fa-brands fa-python"></i>
+                    <p>Python</p>
+                </div>
+
+                <div class="skill-logo-item" data-notion="true">
+                    <i class="fa-brands fa-vuejs"></i>
+                    <p>Vue.js (Apprentissage)</p>
+                </div>
+
+                <div class="skill-logo-item">
+                    <i class="fa-solid fa-database"></i>
+                    <p>SQL</p>
+                </div>
+
+                <div class="skill-logo-item">
+                    <i class="fa-brands fa-figma"></i>
+                    <p>Figma</p>
+                </div>
+
+                <div class="skill-logo-item">
+                    <i class="fa-solid fa-palette"></i>
+                    <p>Suite Adobe (Ai, Ps, Id)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="js-hidden">Mon Parcours</h2>
+
+            <div class="timeline-container">
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Avril - Mai 2025</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Stage 1ère Année</h3>
+                        <p><strong>Davéo Lille (59)</strong></p>
+                        <p>Découverte de Vue.js, Nest.js et de l'observabilité. Création d'une App Vue.js en complète autonomie et mise en place de dashboards d'observabilité.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Depuis Sept. 2024</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Bachelor Développeur Web</h3>
+                        <p><strong>My Digital School, Lille</strong></p>
+                        <p>2ème année Bachelor Cycle Web & Multimédia.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Sept. 2024 - Sept. 2025</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Job Étudiant - Mise en rayon</h3>
+                        <p><strong>Auchan Orchies (59)</strong></p>
+                        <p>Mise en rayon et relation client (services et informations), Gestion de Stock</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Juin 2024</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Baccalauréat Général</h3>
+                        <p><strong>Lycée Charlotte Perriand, Genech</strong></p>
+                        <p>Mention Assez Bien. Spécialité Mathématiques et Sciences du Numérique et de l'Informatique (NSI).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mon Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

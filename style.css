@@ -1,0 +1,717 @@
+/* Variables pour les couleurs, pour plus de cohérence */
+:root {
+    --couleur-fond-noir: #111; /* Fond très sombre */
+    --couleur-texte-blanc: #f7f7f7;
+    --couleur-accent-rouge: #ff3333; /* Votre couleur d'accentuation */
+    --couleur-gris-clair: #ccc;
+    --police-principale: 'Montserrat', sans-serif;
+    --noir-bento: #111111;
+    --border-radius-custom: 30px;
+}
+
+/* Styles de base et Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--police-principale);
+    background-color: var(--couleur-fond-noir);
+    color: var(--couleur-texte-blanc);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Liens globaux */
+a {
+    color: var(--couleur-texte-blanc);
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+a:hover, .active {
+    color: var(--couleur-accent-rouge);
+}
+
+/* --- Header & Navigation --- */
+header {
+    width: 100%;
+    padding: 30px 250px 0px 250px;
+    background-color: rgba(17, 17, 17, 0.85); /* Peut être opaque si besoin */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    backdrop-filter : blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom : 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width : 100%;
+    margin-top : -10vh;
+}
+
+.logo {
+    height : 200px;
+    width : auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;    
+}
+
+nav ul li {
+    margin : 0;
+}
+
+nav ul li a {
+    font-weight: 400;
+}
+
+/* --- Main Content Layout --- */
+main {
+    flex-grow: 1;
+    padding-top: 7%; /* Espace pour le header fixed */
+    padding-bottom: 0px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Section Accueil (index.html) --- */
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0;
+    min-height: 70vh;
+}
+
+.portrait-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-placeholder {
+    width: 350px;
+    height: 450px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.8), var(--couleur-fond-noir)); /* Effet sombre/mystérieux */
+    border: 2px solid var(--couleur-accent-rouge);
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.5); /* Ombre rouge subtile */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: var(--couleur-gris-clair);
+    overflow: hidden; /* Pour contenir la photo réelle */
+}
+
+.bio-container {
+    flex: 2;
+}
+
+.bio-container h1 {
+    font-size: 5em;
+    margin-bottom: 20px;
+    color :#ff3333;
+}
+
+.bio-container p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.cta-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Boutons CTA (Call To Action) */
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--couleur-accent-rouge);
+    color: var(--couleur-texte-blanc);
+    border: 2px solid var(--couleur-accent-rouge);
+    border-radius: 5px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet de texte au survol (géré en JS pour le texte dynamique) */
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--couleur-accent-rouge);
+}
+
+.placeholder-section {
+    padding: 50px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Section Contact (contact.html) --- */
+
+.contact-section {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #222;
+    border: 1px solid #333;
+    color: var(--couleur-texte-blanc);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--couleur-accent-rouge);
+    box-shadow: 0 0 5px rgba(255, 51, 51, 0.7);
+}
+
+.submit-button {
+    align-self: flex-start;
+    cursor: pointer;
+    /* Reprendre le style des CTA buttons */
+    padding: 12px 25px;
+    background-color: var(--couleur-accent-rouge);
+    color: var(--couleur-texte-blanc);
+    border: 2px solid var(--couleur-accent-rouge);
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: transparent;
+    color: var(--couleur-accent-rouge);
+}
+
+/* --- Footer --- */
+footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+    color: var(--couleur-gris-clair);
+    font-size: 0.9em;
+}
+
+nav ul li:nth-child(1), 
+nav ul li:nth-child(2) {
+    margin-right: 40px; 
+}
+
+nav ul li:nth-last-child(1),
+nav ul li:nth-last-child(2) {
+    margin-left: 40px;
+}
+
+nav ul li:nth-child(2) {
+    /* Annuler la marge de l'élément à côté du logo */
+    margin-right: 0; 
+}
+
+nav ul li:nth-last-child(2) {
+    /* Annuler la marge de l'élément à côté du logo */
+    margin-left: 0; 
+}
+
+.timeline-section {
+    padding: 80px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-section h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--couleur-texte-blanc);
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--couleur-accent-rouge); /* Ligne rouge */
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Centrée */
+    margin-left: -1px;
+    z-index: 1;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%; /* Prend 50% de la largeur du conteneur */
+    margin-bottom: 50px;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(even) {
+    left: 0; 
+    text-align: right;
+    padding-right: 60px; /* Espace pour le point */
+    padding-left: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 50%; 
+    padding-left: 60px; /* Espace pour le point */
+    padding-right: 0;
+}
+
+/* Le point rouge au centre */
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--couleur-accent-rouge);
+    border: 3px solid #111; /* Petit contour noir pour le faire ressortir du trait */
+    top: 15px;
+    border-radius: 50%;
+    z-index: 3;
+    transition: transform 0.3s ease;
+}
+
+/* Placer les points du côté gauche */
+.timeline-item:nth-child(even) .timeline-dot {
+    right: -8px; /* Positionné à droite de l'élément (donc sur la ligne) */
+    left: auto;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    left: -8px; /* Positionné à gauche de l'élément (donc sur la ligne) */
+    right: auto;
+}
+
+/* Effet au survol du point (pour l'interactivité) */
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--couleur-accent-rouge);
+}
+
+/* Contenu */
+.timeline-content {
+    background-color: #222; /* Fond légèrement plus clair que le fond principal */
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid var(--couleur-accent-rouge);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    border-left: none;
+    border-right: 3px solid var(--couleur-accent-rouge);
+}
+
+.timeline-date {
+    color: var(--couleur-accent-rouge);
+    font-weight: 700;
+    margin-bottom: 5px;
+    /* Aligner la date avec le reste du texte */
+    text-align: inherit; 
+}
+
+h1 {
+    color :#ff3333;
+    padding-right : 0px;
+    margin-right : 0px;
+}
+
+.para {
+    font-weight : bold;
+}
+
+/* --- Correction Section Compétences - Grille de Logos --- */
+
+.skills-section {
+    padding: 80px 0;
+    margin-top: 50px;
+}
+
+.skills-section h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--couleur-texte-blanc);
+}
+
+.skills-grid-logos {
+    display: grid;
+    /* Créer une grille avec 4 colonnes égales sur grand écran */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skill-logo-item {
+    background-color: #1a1a1a;
+    padding: 20px 10px;
+    border-radius: 8px;
+    /* Bordure subtile en rouge pour accentuation */
+    border: 1px solid rgba(255, 51, 51, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-logo-item:hover {
+    transform: translateY(-5px); /* Effet de soulèvement au survol */
+    box-shadow: 0 10px 20px rgba(255, 51, 51, 0.3); /* Ombre rouge */
+}
+
+/* Style des icônes (logos) */
+.skill-logo-item i {
+    font-size: 3.5em; /* Grande taille pour l'impact visuel */
+    color: var(--couleur-accent-rouge); 
+    margin-bottom: 10px;
+}
+
+/* Style du texte */
+.skill-logo-item p {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: var(--couleur-gris-clair);
+}
+
+/* Style spécifique pour les notions/apprentissages */
+.skill-logo-item[data-notion="true"] p {
+    font-style: italic;
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* Media Query pour les petits écrans (tablettes) */
+@media (max-width: 768px) {
+    .skills-grid-logos {
+        /* Passer à 2 colonnes sur tablette */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+#contact_page main {
+    padding-top : 200px !important;
+}
+
+/* --- Page Projets - Bento Grid Stylisé --- */
+
+.projets-main {
+    padding-top: 150px; /* Pour passer sous la nav */
+}
+
+.projects-bento-grid {
+    display: grid;
+    /* On crée 3 colonnes : les deux côtés sont plus larges */
+    grid-template-columns: 1.5fr 1fr 1.5fr; 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 600px; /* Hauteur totale de la grille */
+}
+
+/* Style commun inspiré de ta photo de profil */
+.project-card {
+    background-color: #111; /* Noir profond */
+    border: 3px solid var(--couleur-accent-rouge); /* Contour rouge comme ton profil */
+    border-radius: 30px; /* Coins bien arrondis */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Texte en bas */
+    padding: 30px;
+}
+
+/* Effet au survol */
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 51, 51, 0.4); /* Lueur rouge */
+}
+
+/* Les deux grandes cartes */
+.card-tall {
+    height: 100%;
+}
+
+/* Le conteneur du milieu */
+.stacked-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Deux lignes égales */
+    gap: 25px;
+}
+
+.card-small {
+    height: 100%;
+    padding: 20px; /* Un peu moins de padding car plus petite */
+}
+
+/* Textes à l'intérieur */
+.project-info h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-category {
+    color: var(--couleur-accent-rouge);
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- Adaptabilité Mobile (Important !) --- */
+@media (max-width: 900px) {
+    .projects-bento-grid {
+        display: flex;
+        flex-direction: column; /* Tout s'empile sur téléphone */
+        height: auto;
+    }
+    
+    .card-tall, .stacked-container {
+        height: 300px; /* Hauteur fixe sur mobile pour garder du style */
+    }
+}
+
+/* Conteneur de l'image */
+.project-image {
+    position: absolute; /* L'image remplit la carte */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Derrière le texte */
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image s'adapte sans être déformée */
+    opacity: 0.4; /* On baisse l'opacité pour que le texte reste lisible */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* On remonte le texte au-dessus de l'image */
+.project-info {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(17, 17, 17, 1) 20%, rgba(17, 17, 17, 0) 100%);
+    width: 100%;
+    padding: 30px;
+}
+
+/* Effet zoom sur l'image quand on survole la carte */
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+    opacity: 0.7; /* L'image devient plus claire au survol */
+}
+
+/* --- STRUCTURE PAGE PROFIL --- */
+#profil-page main {
+    padding-top: 140px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.text-red { color: var(--couleur-accent-rouge); }
+
+/* --- HERO PROFIL (SECTION 1) --- */
+.hero-profil {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.bento-profile-pic {
+    flex: 0 0 300px;
+    height: 400px;
+    border: 3px solid var(--couleur-accent-rouge);
+    border-radius: var(--border-radius-custom);
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.2);
+}
+
+.bento-profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text-block h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.tag-red {
+    background: var(--couleur-accent-rouge);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat .num {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--couleur-accent-rouge);
+}
+
+/* --- BLOCS INFOS (SECTION 2) --- */
+.double-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    background: var(--noir-bento);
+    border: 3px solid var(--couleur-accent-rouge);
+    border-radius: var(--border-radius-custom);
+    padding: 40px;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card-header i {
+    font-size: 1.8rem;
+    color: var(--couleur-accent-rouge);
+}
+
+.card-body p {
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* --- CTA SECTION (SECTION 3) --- */
+.cta-box {
+    background: linear-gradient(135deg, #111, #222);
+    border: 3px solid var(--couleur-accent-rouge);
+    border-radius: var(--border-radius-custom);
+    padding: 60px;
+    text-align: center;
+}
+
+.cta-btns {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary {
+    background: var(--couleur-accent-rouge);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 850px) {
+    .hero-profil, .double-block {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+    .hero-text-block h1 { font-size: 2.5rem; }
+}
